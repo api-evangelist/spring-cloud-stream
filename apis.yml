@@ -11,7 +11,7 @@ tags:
 - Apache Kafka
 - RabbitMQ
 created: '2024-01-01'
-modified: '2024-01-01'
+modified: '2026-03-16'
 apis:
 - name: Spring Cloud Stream API
   description: Core API for building message-driven microservice applications
