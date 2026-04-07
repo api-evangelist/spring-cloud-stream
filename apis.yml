@@ -5,13 +5,13 @@ description: >-
 image: https://spring.io/img/projects/spring-cloud.svg
 url: https://spring.io/projects/spring-cloud-stream
 tags:
-  - Microservices
+  - Apache Kafka
   - Event-Driven
   - Messaging
-  - Stream Processing
-  - Spring Framework
-  - Apache Kafka
+  - Microservices
   - RabbitMQ
+  - Spring Framework
+  - Stream Processing
 created: '2024-01-01'
 modified: '2026-03-16'
 apis:
@@ -20,16 +20,14 @@ apis:
       Core API for building message-driven microservice applications.
     image: https://spring.io/img/projects/spring-cloud.svg
     humanUrl: https://spring.io/projects/spring-cloud-stream
-    baseUrl: 
-      https://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-stream
+    baseUrl: https://repo.spring.io/milestone/org/springframework/cloud/spring-cloud-stream
     tags:
       - Messaging
-      - Streaming
       - Microservices
+      - Streaming
     properties:
       - type: Documentation
-        url: 
-          https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/
+        url: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/
       - type: API Documentation
         url: https://docs.spring.io/spring-cloud-stream/docs/current/api/
       - type: Getting Started
@@ -37,8 +35,7 @@ apis:
       - type: GitHub Repository
         url: https://github.com/spring-cloud/spring-cloud-stream
       - type: Maven Repository
-        url: 
-          https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream
+        url: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream
       - type: Sample Applications
         url: https://github.com/spring-cloud/spring-cloud-stream-samples
       - type: Release Notes
