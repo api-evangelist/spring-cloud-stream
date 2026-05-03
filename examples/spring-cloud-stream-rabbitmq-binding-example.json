@@ -1,0 +1,54 @@
+{
+  "name": "RabbitMQ Binder Configuration Example",
+  "description": "Example Spring Cloud Stream configuration for connecting to RabbitMQ with dead-letter queue and retry",
+  "format": "application.yml",
+  "configuration": {
+    "spring": {
+      "cloud": {
+        "stream": {
+          "function": {
+            "definition": "handlePayment"
+          },
+          "bindings": {
+            "handlePayment-in-0": {
+              "destination": "payment-requests",
+              "group": "payment-service",
+              "consumer": {
+                "maxAttempts": 5,
+                "backOffInitialInterval": 2000,
+                "backOffMaxInterval": 30000,
+                "backOffMultiplier": 2.0
+              }
+            },
+            "handlePayment-out-0": {
+              "destination": "payment-results",
+              "contentType": "application/json"
+            }
+          },
+          "rabbit": {
+            "bindings": {
+              "handlePayment-in-0": {
+                "consumer": {
+                  "autoBindDlq": true,
+                  "dlqTtl": 600000,
+                  "republishToDlq": true,
+                  "requeueRejected": false
+                }
+              }
+            }
+          }
+        },
+        "rabbit": {
+          "binders": {
+            "rabbit": {
+              "addresses": "rabbitmq-host:5672",
+              "virtualHost": "/payments",
+              "username": "payment_user",
+              "password": "${RABBITMQ_PASSWORD}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Spring Cloud Stream",
+  "description": "Structure documentation for Spring Cloud Stream binding configuration",
+  "version": "4.1.0",
+  "structures": [
+    {
+      "name": "BindingProperties",
+      "description": "Configuration properties for a single message channel binding",
+      "fields": [
+        { "name": "destination", "type": "string", "required": false, "description": "Topic or exchange name on the broker" },
+        { "name": "group", "type": "string", "required": false, "description": "Consumer group name for durable subscriptions" },
+        { "name": "contentType", "type": "string", "required": false, "default": "application/json", "description": "Message content type for serialization" },
+        { "name": "binder", "type": "string", "required": false, "description": "Named binder to use (Kafka or RabbitMQ)" },
+        { "name": "consumer", "type": "object", "required": false, "description": "Consumer-specific binding properties" },
+        { "name": "producer", "type": "object", "required": false, "description": "Producer-specific binding properties" }
+      ]
+    },
+    {
+      "name": "ConsumerProperties",
+      "description": "Consumer binding configuration",
+      "fields": [
+        { "name": "autoStartup", "type": "boolean", "required": false, "default": true, "description": "Auto-start consumer on application startup" },
+        { "name": "concurrency", "type": "integer", "required": false, "default": 1, "description": "Number of concurrent consumer threads" },
+        { "name": "partitioned", "type": "boolean", "required": false, "default": false, "description": "Whether receiving from a partitioned producer" },
+        { "name": "maxAttempts", "type": "integer", "required": false, "default": 3, "description": "Max retry attempts before dead-letter routing" }
+      ]
+    },
+    {
+      "name": "ProducerProperties",
+      "description": "Producer binding configuration",
+      "fields": [
+        { "name": "partitionKeyExpression", "type": "string", "required": false, "description": "SpEL expression for determining partition key" },
+        { "name": "partitionCount", "type": "integer", "required": false, "default": 1, "description": "Number of target partitions" },
+        { "name": "requiredGroups", "type": "array", "required": false, "description": "Consumer groups guaranteed to receive messages" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "spring": "https://spring.io/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "StreamBinding": "spring:StreamBinding",
+    "MessageChannel": "spring:MessageChannel",
+    "ConsumerGroup": "spring:ConsumerGroup",
+    "KafkaBinder": "spring:KafkaBinder",
+    "RabbitMQBinder": "spring:RabbitMQBinder",
+
+    "destination": {
+      "@id": "spring:destination",
+      "@type": "xsd:string"
+    },
+    "group": {
+      "@id": "spring:group",
+      "@type": "xsd:string"
+    },
+    "contentType": {
+      "@id": "schema:encodingFormat"
+    },
+    "binder": {
+      "@id": "spring:binder",
+      "@type": "xsd:string"
+    },
+    "concurrency": {
+      "@id": "spring:concurrency",
+      "@type": "xsd:integer"
+    },
+    "partitioned": {
+      "@id": "spring:partitioned",
+      "@type": "xsd:boolean"
+    },
+    "partitionCount": {
+      "@id": "spring:partitionCount",
+      "@type": "xsd:integer"
+    },
+    "name": {
+      "@id": "schema:name"
+    },
+    "description": {
+      "@id": "schema:description"
+    },
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "url": "schema:url"
+  }
+}

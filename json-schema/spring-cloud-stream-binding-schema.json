@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/spring-cloud-stream/json-schema/spring-cloud-stream-binding-schema.json",
+  "title": "Spring Cloud Stream Binding Configuration",
+  "description": "JSON Schema for Spring Cloud Stream binding configuration properties in application.yml/properties.",
+  "type": "object",
+  "properties": {
+    "spring": {
+      "type": "object",
+      "properties": {
+        "cloud": {
+          "type": "object",
+          "properties": {
+            "stream": {
+              "type": "object",
+              "description": "Spring Cloud Stream configuration root",
+              "properties": {
+                "function": {
+                  "type": "object",
+                  "properties": {
+                    "definition": {
+                      "type": "string",
+                      "description": "Semicolon-delimited list of function bean names to bind"
+                    },
+                    "bindings": {
+                      "type": "object",
+                      "description": "Mapping of function names to binding names",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "bindings": {
+                  "type": "object",
+                  "description": "Per-binding configuration",
+                  "additionalProperties": {
+                    "$ref": "#/$defs/BindingProperties"
+                  }
+                },
+                "default": {
+                  "type": "object",
+                  "description": "Default binding properties applied to all bindings",
+                  "$ref": "#/$defs/BindingProperties"
+                },
+                "kafka": {
+                  "$ref": "#/$defs/KafkaBinderProperties"
+                },
+                "rabbit": {
+                  "$ref": "#/$defs/RabbitBinderProperties"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "BindingProperties": {
+      "type": "object",
+      "properties": {
+        "destination": {
+          "type": "string",
+          "description": "Topic or exchange name on the broker"
+        },
+        "group": {
+          "type": "string",
+          "description": "Consumer group name (enables durable subscription)"
+        },
+        "contentType": {
+          "type": "string",
+          "default": "application/json",
+          "description": "Content type for message serialization"
+        },
+        "binder": {
+          "type": "string",
+          "description": "Named binder to use (if multiple binders configured)"
+        },
+        "consumer": {
+          "$ref": "#/$defs/ConsumerProperties"
+        },
+        "producer": {
+          "$ref": "#/$defs/ProducerProperties"
+        }
+      }
+    },
+    "ConsumerProperties": {
+      "type": "object",
+      "properties": {
+        "autoStartup": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to auto-start the consumer on application startup"
+        },
+        "concurrency": {
+          "type": "integer",
+          "default": 1,
+          "description": "Number of concurrent consumer threads"
+        },
+        "partitioned": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the consumer receives data from a partitioned producer"
+        },
+        "maxAttempts": {
+          "type": "integer",
+          "default": 3,
+          "description": "Number of attempts to process a message before sending to DLQ"
+        },
+        "backOffInitialInterval": {
+          "type": "integer",
+          "default": 1000,
+          "description": "Initial backoff interval in milliseconds for retries"
+        },
+        "backOffMaxInterval": {
+          "type": "integer",
+          "default": 10000,
+          "description": "Maximum backoff interval in milliseconds for retries"
+        }
+      }
+    },
+    "ProducerProperties": {
+      "type": "object",
+      "properties": {
+        "partitionKeyExpression": {
+          "type": "string",
+          "description": "SpEL expression to determine partition key from outbound message"
+        },
+        "partitionCount": {
+          "type": "integer",
+          "default": 1,
+          "description": "Number of target partitions for this producer"
+        },
+        "requiredGroups": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Consumer groups that must exist before sending"
+        }
+      }
+    },
+    "KafkaBinderProperties": {
+      "type": "object",
+      "properties": {
+        "binders": {
+          "type": "object",
+          "properties": {
+            "kafka": {
+              "type": "object",
+              "properties": {
+                "brokers": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "List of Kafka broker addresses"
+                },
+                "defaultBrokerPort": {
+                  "type": "integer",
+                  "default": 9092
+                },
+                "autoCreateTopics": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "replicationFactor": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "RabbitBinderProperties": {
+      "type": "object",
+      "properties": {
+        "binders": {
+          "type": "object",
+          "properties": {
+            "rabbit": {
+              "type": "object",
+              "properties": {
+                "addresses": {
+                  "type": "string",
+                  "description": "Comma-separated list of broker addresses"
+                },
+                "virtualHost": {
+                  "type": "string",
+                  "default": "/"
+                },
+                "username": { "type": "string" },
+                "password": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Kafka Binder Configuration Example",
+  "description": "Example Spring Cloud Stream configuration for connecting to Apache Kafka with consumer group and partitioning",
+  "format": "application.yml",
+  "configuration": {
+    "spring": {
+      "cloud": {
+        "stream": {
+          "function": {
+            "definition": "processOrder;auditEvent"
+          },
+          "bindings": {
+            "processOrder-in-0": {
+              "destination": "orders",
+              "group": "order-processing-service",
+              "consumer": {
+                "concurrency": 3,
+                "maxAttempts": 3,
+                "backOffInitialInterval": 1000,
+                "backOffMaxInterval": 10000
+              }
+            },
+            "processOrder-out-0": {
+              "destination": "processed-orders",
+              "producer": {
+                "partitionKeyExpression": "payload.customerId",
+                "partitionCount": 8
+              }
+            },
+            "auditEvent-in-0": {
+              "destination": "audit-events",
+              "group": "audit-consumer"
+            }
+          },
+          "kafka": {
+            "binder": {
+              "brokers": ["kafka-broker-1:9092", "kafka-broker-2:9092"],
+              "replicationFactor": 3,
+              "autoCreateTopics": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "javaImplementation": {
+    "processOrder": "@Bean\npublic Function<Order, ProcessedOrder> processOrder() {\n    return order -> {\n        // Process the order\n        return new ProcessedOrder(order.getId(), \"PROCESSED\");\n    };\n}",
+    "auditEvent": "@Bean\npublic Consumer<AuditEvent> auditEvent() {\n    return event -> {\n        auditRepository.save(event);\n    };\n}"
+  }
+}

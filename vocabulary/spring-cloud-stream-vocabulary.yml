@@ -1,0 +1,139 @@
+name: Spring Cloud Stream Vocabulary
+description: Domain vocabulary and taxonomy for Spring Cloud Stream event-driven microservices and messaging concepts.
+version: "4.1.0"
+created: "2026-05-02"
+modified: "2026-05-02"
+url: https://spring.io/projects/spring-cloud-stream
+
+terms:
+
+  - term: Binder
+    definition: >-
+      The abstraction that connects Spring Cloud Stream to an external messaging middleware.
+      Official binders exist for Apache Kafka and RabbitMQ. Custom binders can be implemented
+      for other messaging systems.
+    category: Architecture
+    tags:
+      - Messaging
+      - Integration
+
+  - term: Binding
+    definition: >-
+      The bridge between a function (producer/consumer/processor) and an external messaging
+      system (topic, exchange, queue). Bindings are named {functionName}-in-{index} and
+      {functionName}-out-{index}.
+    category: Configuration
+    tags:
+      - Channel
+      - Configuration
+
+  - term: Consumer Group
+    definition: >-
+      A named group of consumers that collectively subscribe to a topic, where each message
+      is delivered to exactly one consumer in the group. Enables competing consumer patterns
+      and horizontal scaling.
+    category: Messaging Pattern
+    tags:
+      - Competing Consumer
+      - Scalability
+      - Kafka
+
+  - term: Destination
+    definition: >-
+      The name of the topic, queue, or exchange on the messaging broker that a binding is
+      connected to. Set via spring.cloud.stream.bindings.{name}.destination.
+    category: Configuration
+    tags:
+      - Topic
+      - Queue
+      - Exchange
+
+  - term: Dead Letter Queue
+    definition: >-
+      A secondary destination where messages are routed after exhausting all retry attempts.
+      Enables handling of poison messages and failed message analysis without blocking the
+      main processing pipeline.
+    category: Error Handling
+    tags:
+      - Error Handling
+      - Retry
+      - DLQ
+
+  - term: Partitioning
+    definition: >-
+      The mechanism for routing related messages to the same consumer instance, enabling
+      stateful processing. Messages with the same partition key are always delivered to the
+      same partition consumer.
+    category: Messaging Pattern
+    tags:
+      - Scalability
+      - Ordering
+      - Stateful
+
+  - term: Functional Programming Model
+    definition: >-
+      The recommended Spring Cloud Stream programming model using java.util.function.Function,
+      Consumer, and Supplier interfaces. Functions are auto-discovered and bound to channels
+      via spring.cloud.function.definition.
+    category: Programming Model
+    tags:
+      - Functional
+      - Lambda
+      - Modern
+
+  - term: Supplier
+    definition: >-
+      A java.util.function.Supplier<T> bound as a message producer (source). Polled on a
+      schedule and sends output to the bound destination.
+    category: Function Type
+    tags:
+      - Producer
+      - Source
+
+  - term: Function
+    definition: >-
+      A java.util.function.Function<T,R> bound as a message processor (transformer). Consumes
+      from an input binding and produces to an output binding.
+    category: Function Type
+    tags:
+      - Processor
+      - Transformation
+
+  - term: Consumer
+    definition: >-
+      A java.util.function.Consumer<T> bound as a message subscriber (sink). Consumes from
+      an input binding with no output.
+    category: Function Type
+    tags:
+      - Subscriber
+      - Sink
+
+  - term: Message Converter
+    definition: >-
+      A component that serializes and deserializes message payloads between Java objects and
+      wire formats (JSON, Avro, Protobuf). Spring Cloud Stream uses contentType negotiation.
+    category: Serialization
+    tags:
+      - Serialization
+      - JSON
+      - Avro
+
+  - term: Kafka Streams
+    definition: >-
+      Direct integration with the Apache Kafka Streams API provided by the Kafka Streams binder,
+      enabling stateful stream processing, windowing, joins, and KTable operations.
+    category: Advanced Feature
+    tags:
+      - Kafka Streams
+      - Stateful Processing
+      - KTable
+
+  - term: Reactive Streams
+    definition: >-
+      Spring Cloud Stream's support for reactive programming using Project Reactor types
+      (Flux, Mono) as function signatures for streaming and backpressure-aware processing.
+    category: Programming Model
+    tags:
+      - Reactive
+      - Project Reactor
+      - Backpressure
