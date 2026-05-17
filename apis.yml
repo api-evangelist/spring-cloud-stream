@@ -43,7 +43,7 @@ apis:
         url: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/
       - type: API Documentation
         url: https://docs.spring.io/spring-cloud-stream/docs/current/api/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://spring.io/projects/spring-cloud-stream#learn
       - type: GitHub
         url: https://github.com/spring-cloud/spring-cloud-stream
@@ -109,11 +109,11 @@ common:
     url: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/
   - type: GitHub
     url: https://github.com/spring-cloud/spring-cloud-stream
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/spring-cloud
   - type: Blog
     url: https://spring.io/blog/category/cloud
-  - type: Stack Overflow
+  - type: StackOverflow
     url: https://stackoverflow.com/questions/tagged/spring-cloud-stream
   - type: Support
     url: https://spring.io/support
