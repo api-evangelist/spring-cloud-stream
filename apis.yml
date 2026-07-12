@@ -103,6 +103,10 @@ apis:
       - type: Maven Repository
         url: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream-binder-rabbit
 common:
+  - type: VulnerabilityDisclosure
+    url: security/spring-cloud-stream-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/spring-cloud-stream-domain-security.yml
   - type: Website
     url: https://spring.io/projects/spring-cloud-stream
   - type: Documentation
