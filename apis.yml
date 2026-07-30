@@ -6,6 +6,18 @@ description: >-
   established Spring idioms and best practices, including support for persistent
   pub/sub semantics, consumer groups, and stateful partitions with Apache Kafka and
   RabbitMQ binders.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://spring.io/img/projects/spring-cloud.svg
 url: https://spring.io/projects/spring-cloud-stream
 created: '2024-01-01'
