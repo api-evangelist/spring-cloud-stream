@@ -72,7 +72,7 @@ apis:
         url: https://github.com/spring-cloud/spring-cloud-stream
       - type: Maven Repository
         url: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream
-      - type: Samples
+      - type: Examples
         url: https://github.com/spring-cloud/spring-cloud-stream-samples
       - type: ReleaseNotes
         url: https://github.com/spring-cloud/spring-cloud-stream/releases
