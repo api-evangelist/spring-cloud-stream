@@ -6,6 +6,17 @@ description: >-
   established Spring idioms and best practices, including support for persistent
   pub/sub semantics, consumer groups, and stateful partitions with Apache Kafka and
   RabbitMQ binders.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
