@@ -150,3 +150,5 @@ maintainers:
   - FN: VMware Tanzu (Spring Team)
     email: spring-cloud@vmware.com
     url: https://spring.io/team
+x-parent: spring
+x-relationship: product
