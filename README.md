@@ -66,106 +66,143 @@
 
 Spring Cloud Stream is a framework for building event-driven microservices connected with shared messaging systems. It provides a flexible programming model built on established Spring idioms and best practices, including support for persistent pub/sub semantics, consumer groups, and stateful partitions with Apache Kafka and RabbitMQ binders.
 
-**URL:** https://spring.io/projects/spring-cloud-stream
+**Areas:** Apache Kafka · AsyncAPI · Event-Driven · Java · Messaging · Microservices · RabbitMQ · Spring Framework · Stream Processing
 
-## Tags
+## Spring Cloud Stream on APIs.io
 
-Apache Kafka, AsyncAPI, Event-Driven, Java, Messaging, Microservices, RabbitMQ, Spring Framework, Stream Processing
+Everything profiled for Spring Cloud Stream is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/spring-cloud-stream/](https://apis.io/providers/spring-cloud-stream/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (3)
 
-### Spring Cloud Stream Core API
+- [Spring Cloud Stream Core API](https://apis.io/apis/spring-cloud-stream/spring-cloud-stream-core/) — Core programmatic API for building message-driven microservice applications. Provides functional programming model with java.util.function.Function,…
+- [Spring Cloud Stream Kafka Binder](https://apis.io/apis/spring-cloud-stream/spring-cloud-stream-kafka-binder/) — Apache Kafka binder for Spring Cloud Stream providing Kafka producer and consumer binding configuration, Kafka Streams support, partitioning, transaction…
+- [Spring Cloud Stream RabbitMQ Binder](https://apis.io/apis/spring-cloud-stream/spring-cloud-stream-rabbitmq-binder/) — RabbitMQ binder for Spring Cloud Stream providing AMQP-based messaging with support for exchanges, queues, routing keys, dead-letter exchanges, consumer…
 
-Core programmatic API for building message-driven microservice applications. Provides functional programming model with java.util.function.Function, Consumer and Supplier bindings, binding lifecycle management, and integration with Spring Integration for message transformation and routing.
+### Published properties
 
-**Human URL:** https://spring.io/projects/spring-cloud-stream
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Tags:** Bindings, Consumer Groups, Event-Driven, Functional Programming, Messaging, Microservices
+#### JSON Schema (1)
 
-**Properties:**
-- [Documentation](https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/)
-- [API Documentation](https://docs.spring.io/spring-cloud-stream/docs/current/api/)
-- [Getting Started](https://spring.io/projects/spring-cloud-stream#learn)
-- [GitHub](https://github.com/spring-cloud/spring-cloud-stream)
-- [Maven Repository](https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream)
-- [Samples](https://github.com/spring-cloud/spring-cloud-stream-samples)
-- [Releases](https://github.com/spring-cloud/spring-cloud-stream/releases)
-- [Issues](https://github.com/spring-cloud/spring-cloud-stream/issues)
-- [JSON Schema](json-schema/spring-cloud-stream-binding-schema.json)
-- [JSON Structure](json-structure/spring-cloud-stream-binding-structure.json)
-- [JSON-LD Context](json-ld/spring-cloud-stream-context.jsonld)
+The data models the API reads and writes.
 
-### Spring Cloud Stream Kafka Binder
+- [Spring Cloud Stream Binding Configuration](https://apis.io/schemas/spring-cloud-stream/spring-cloud-stream-binding/)
 
-Apache Kafka binder for Spring Cloud Stream providing Kafka producer and consumer binding configuration, Kafka Streams support, partitioning, transaction management, error handling, and dead-letter queues.
+#### JSON Structure (1)
 
-**Human URL:** https://docs.spring.io/spring-cloud-stream-binder-kafka/docs/current/reference/html/
+Data models expressed in JSON Structure.
 
-**Tags:** Apache Kafka, Binder, Event Streaming, Kafka Streams, Messaging
+- [Spring Cloud Stream Binding Structure](https://apis.io/json-structure/spring-cloud-stream/spring-cloud-stream-binding-structure/)
 
-**Properties:**
-- [Documentation](https://docs.spring.io/spring-cloud-stream-binder-kafka/docs/current/reference/html/)
-- [GitHub](https://github.com/spring-cloud/spring-cloud-stream-binder-kafka)
-- [Maven Repository](https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream-binder-kafka)
+#### JSON-LD (1)
 
-### Spring Cloud Stream RabbitMQ Binder
+Linked-data contexts for the provider's vocabulary.
 
-RabbitMQ binder for Spring Cloud Stream providing AMQP-based messaging with support for exchanges, queues, routing keys, dead-letter exchanges, consumer groups, and AMQP transaction management.
+- [Spring Cloud Stream Context](https://apis.io/jsonld/spring-cloud-stream/spring-cloud-stream-context/)
 
-**Human URL:** https://docs.spring.io/spring-cloud-stream-binder-rabbit/docs/current/reference/html/
+#### Vocabulary (1)
 
-**Tags:** AMQP, Binder, Messaging, RabbitMQ
+The provider's domain terms, defined.
 
-**Properties:**
-- [Documentation](https://docs.spring.io/spring-cloud-stream-binder-rabbit/docs/current/reference/html/)
-- [GitHub](https://github.com/spring-cloud/spring-cloud-stream-binder-rabbit)
-- [Maven Repository](https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-stream-binder-rabbit)
+- [Spring Cloud Stream Vocabulary](https://apis.io/vocabularies/spring-cloud-stream/spring-cloud-stream-vocabulary/)
 
-## Artifacts
+#### Examples (2)
 
-### JSON Schemas
+Example requests and responses.
 
-| Schema | Description |
-|--------|-------------|
-| [spring-cloud-stream-binding-schema.json](json-schema/spring-cloud-stream-binding-schema.json) | Binding configuration properties schema for Kafka and RabbitMQ binders |
+- [Spring Cloud Stream Kafka Binding Example](https://apis.io/examples/spring-cloud-stream/spring-cloud-stream-kafka-binding-example/)
+- [Spring Cloud Stream Rabbitmq Binding Example](https://apis.io/examples/spring-cloud-stream/spring-cloud-stream-rabbitmq-binding-example/)
 
-### JSON Structures
+#### Governance rules (1)
 
-| Structure | Description |
-|-----------|-------------|
-| [spring-cloud-stream-binding-structure.json](json-structure/spring-cloud-stream-binding-structure.json) | Binding, consumer, and producer properties structure documentation |
+Spectral rulesets for the provider's contracts.
 
-### JSON-LD Contexts
+- [Spring Cloud Stream — jsonschema rules](https://apis.io/rules/spring-cloud-stream/spring-cloud-stream-jsonschema-spectral-rules/)
 
-| Context | Description |
-|---------|-------------|
-| [spring-cloud-stream-context.jsonld](json-ld/spring-cloud-stream-context.jsonld) | Spring Cloud Stream linked data context |
+#### Security (2)
 
-### Examples
+Authentication, trust centre, and vulnerability disclosure.
 
-| Example | Description |
-|---------|-------------|
-| [spring-cloud-stream-kafka-binding-example.json](examples/spring-cloud-stream-kafka-binding-example.json) | Kafka binder configuration with consumer groups and partitioning |
-| [spring-cloud-stream-rabbitmq-binding-example.json](examples/spring-cloud-stream-rabbitmq-binding-example.json) | RabbitMQ binder configuration with dead-letter queue |
+- [Spring Cloud Stream Domain Security](https://apis.io/security/spring-cloud-stream/spring-cloud-stream-domain-security/)
+- [Spring Cloud Stream Vulnerability Disclosure](https://apis.io/security/spring-cloud-stream/spring-cloud-stream-vulnerability-disclosure/)
 
-### Vocabulary
+#### Plans and pricing (1)
 
-| Vocabulary | Description |
-|------------|-------------|
-| [spring-cloud-stream-vocabulary.yml](vocabulary/spring-cloud-stream-vocabulary.yml) | Spring Cloud Stream domain vocabulary and terminology |
+Published plans, tiers and prices.
 
-## Common Properties
+- [Spring Cloud Stream Plans Pricing](https://apis.io/plans/spring-cloud-stream/spring-cloud-stream-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Spring Cloud Stream Rate Limits](https://apis.io/rate-limits/spring-cloud-stream/spring-cloud-stream-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Spring Cloud Stream Finops](https://apis.io/finops/spring-cloud-stream/spring-cloud-stream-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://spring.io/projects/spring-cloud-stream)
 - [Documentation](https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/)
-- [GitHub](https://github.com/spring-cloud/spring-cloud-stream)
-- [GitHub Organization](https://github.com/spring-cloud)
-- [Blog](https://spring.io/blog/category/cloud)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/spring-cloud-stream)
 - [Support](https://spring.io/support)
+- [Blog](https://spring.io/blog/category/cloud)
+- [GitHub](https://github.com/spring-cloud)
 
-## Maintainers
+## API Evangelist rating
 
-**Name:** VMware Tanzu (Spring Team)  
-**Email:** spring-cloud@vmware.com  
-**URL:** https://spring.io/team
+**Kin Score 28.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 24.4 |
+| Contract governance | 23.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 7.9 |
+
+**Agent readiness 1.9** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/spring-cloud-stream/](https://apis.io/providers/spring-cloud-stream/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Spring Cloud Stream: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/spring-cloud-stream/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
